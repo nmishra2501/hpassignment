@@ -1,0 +1,31 @@
+<template>
+    <template for:each={mapData} for:item="vendor">
+        <div key={vendor.key} class="slds-m-around_medium">            
+            <div class="slds-12-of-12 slds-p-horizontal_large slds-box"><strong>Vaccination Center: </strong>{vendor.key} </div>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col"> 
+                            <div class="slds-truncate" title="Opportunity Name">Name</div>
+                        </th>
+                        <th class="" scope="col"> 
+                            <div class="slds-truncate" title="Opportunity Name">Age</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={vendor.value} for:item="person">
+                        <tr class="slds-hint-parent" key={person.name}>
+                            <td data-label="Account Name"  key={person.name}>
+                                <div class="slds-truncate" title={person.name}>{person.name}</div>
+                            </td>
+                            <td data-label="Account Name"  key={person.age}>
+                                <div class="slds-truncate">{person.age}</div>
+                            </td>                      
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </template>
+</template>
